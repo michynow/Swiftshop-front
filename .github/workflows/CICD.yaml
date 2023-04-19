@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Netlify Deploy
-        uses: netlify/actions/cli@v2
+        run: npx netlify deploy --build --prod
         with:
           args: deploy --prod --dir=out
         env:
