@@ -1,4 +1,4 @@
-name: Netlify Deploy
+name: Swiftshop CI/CD
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Netlify Deploy
-        run: npx netlify deploy --build --prod
+        uses: netlify/actions/cli@latest
         with:
           args: deploy --prod --dir=out
         env:
