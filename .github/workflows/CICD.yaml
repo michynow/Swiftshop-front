@@ -29,10 +29,3 @@ jobs:
           git config --global user.name "$GIT_AUTHOR_NAME"
           git checkout -b deploy/prod
           git push origin deploy/prod
-      - name: Netlify Deploy
-        if: github.ref == 'refs/heads/deploy/prod'
-        uses: netlify/actions/cli@main
-        with:
-          args: deploy --prod --dir=out
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
