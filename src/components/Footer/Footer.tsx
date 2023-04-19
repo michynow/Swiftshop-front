@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
           <p className="text-sm mt-2">
             Visit one of our social media pages to stay up to date
-            with Swiftshop's newest trends and updates.
+            with Swiftshops newest trends and updates.
           </p>
         </div>
 
