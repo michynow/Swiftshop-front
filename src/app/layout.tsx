@@ -1,6 +1,7 @@
 import Header from "@swiftshop/components/Header/Header";
 import "./globals.css";
 import Footer from "@swiftshop/components/Footer/Footer";
+import QueryClientProviders from "@swiftshop/lib/QueryClientProvider";
 
 export const metadata = {
   title: "Create Next App",
@@ -16,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <QueryClientProviders>{children}</QueryClientProviders>
         <Footer />
       </body>
     </html>
