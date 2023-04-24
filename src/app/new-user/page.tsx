@@ -19,6 +19,7 @@ export default function NewUserPage() {
         body: JSON.stringify({ email, password }),
       })
   );
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
