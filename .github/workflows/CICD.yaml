@@ -28,9 +28,9 @@ jobs:
             echo "deploy/prod branch already exists, checking out and pushing to it"
             git checkout deploy/prod
             git merge main
-            git push
+            git push -f
           else
             echo "deploy/prod branch does not exist, creating and pushing to it"
             git checkout -b deploy/prod
-            git push origin deploy/prod
+            git push -f origin deploy/prod
           fi
