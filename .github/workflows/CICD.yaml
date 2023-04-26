@@ -24,5 +24,13 @@ jobs:
         run: |
           git config user.name "$(git log -n 1 --pretty=format:%an)"
           git config user.email "$(git log -n 1 --pretty=format:%ae)"
-          git checkout -b deploy/prod
-          git push origin deploy/prod
+          if git show-ref --verify --quiet "refs/heads/deploy/prod"; then
+            echo "deploy/prod branch already exists, checking out and pushing to it"
+            git checkout deploy/prod
+            git merge main
+            git push
+          else
+            echo "deploy/prod branch does not exist, creating and pushing to it"
+            git checkout -b deploy/prod
+            git push origin deploy/prod
+          fi
