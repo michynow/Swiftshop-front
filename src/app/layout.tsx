@@ -2,6 +2,9 @@ import Header from "@swiftshop/components/Header/Header";
 import "./globals.css";
 import Footer from "@swiftshop/components/Footer/Footer";
 import QueryClientProviders from "@swiftshop/lib/QueryClientProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ToastContainerProvider from "@swiftshop/lib/ToastContainerProvider";
 
 export const metadata = {
   title: "Create Next App",
@@ -16,9 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <QueryClientProviders>{children}</QueryClientProviders>
-        <Footer />
+        <QueryClientProviders>
+          <Header />
+          <ToastContainerProvider />
+          {children}
+          <Footer />
+        </QueryClientProviders>
       </body>
     </html>
   );

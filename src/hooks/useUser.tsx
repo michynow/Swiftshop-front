@@ -5,7 +5,7 @@ export default function useUser() {
     ["user"],
     async () => {
       try {
-        return await fetchJson(`${process.env.CMS_URL}/api/user`);
+        return await fetchJson(`/api/user`);
       } catch (error) {
         return null;
       }
